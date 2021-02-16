@@ -15,10 +15,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
-import com.google.firebase.auth.FirebaseUser;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
@@ -42,14 +40,14 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 String id=edt_id.getText().toString();
                 String pw=edt_pw.getText().toString();
-                firebaseAuth.signInWithEmailAndPassword(id,pw).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
+                firebaseAuth.signInWithEmailAndPassword(id,pw).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Intent intent=new Intent(Login.this,MainActivity.class);
+                            Intent intent=new Intent(LoginActivity.this,MainActivity.class);
                             startActivity(intent);
                         }else{
-                            Toast.makeText(Login.this,"로그인 오류",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this,"로그인 오류",Toast.LENGTH_SHORT).show();
                         }
 
                     }
@@ -59,7 +57,7 @@ public class Login extends AppCompatActivity {
         btn_reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Login.this,Register.class);
+                Intent intent=new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });
