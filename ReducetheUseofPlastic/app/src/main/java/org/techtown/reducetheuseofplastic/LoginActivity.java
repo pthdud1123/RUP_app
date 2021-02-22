@@ -35,6 +35,15 @@ public class LoginActivity extends AppCompatActivity {
         edt_pw=findViewById(R.id.edt_pw);
         btn_login=findViewById(R.id.btn_login);
         btn_reg=findViewById(R.id.btn_reg);
+
+        /*
+        if(firebaseAuth.getCurrentUser()!=null){
+            //이미 로그인이 되어 있다면 액티비티를 종료 하고 main액티비티를 연다.
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        }
+
+         */
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+                            intent.putExtra("userEmail",id);
                             startActivity(intent);
                         }else{
                             Toast.makeText(LoginActivity.this,"로그인 오류",Toast.LENGTH_SHORT).show();

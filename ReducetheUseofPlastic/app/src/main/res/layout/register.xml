@@ -31,12 +31,11 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/text_name"
+            android:id="@+id/edt_name"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="이름"
-            android:inputType="textPassword"
             android:textColor="#000000"
             android:textColorHint="#9C000000" />
 
@@ -54,7 +53,6 @@
                 android:layout_weight="3"
                 android:layout_gravity="center"
                 android:hint="아이디"
-                android:inputType="textPassword"
                 android:textColor="#000000"
                 android:textColorHint="#9C000000" />
 
@@ -73,12 +71,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:hint="PW"
-            android:inputType="textPassword"
             android:textColor="#000000"
             android:textColorHint="#9C000000" />
 
         <EditText
-            android:id="@+id/text_pass2"
+            android:id="@+id/edt_pw2"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -165,7 +162,7 @@
         </LinearLayout>
 
         <EditText
-            android:id="@+id/text_email"
+            android:id="@+id/edt_email"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -174,7 +171,7 @@
             android:textColorHint="#9C000000" />
 
         <EditText
-            android:id="@+id/text_Recommended"
+            android:id="@+id/edt_recommended"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -183,7 +180,7 @@
             android:textColorHint="#9C000000"/>
 
         <EditText
-            android:id="@+id/text_phone"
+            android:id="@+id/edt_phone"
             android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
