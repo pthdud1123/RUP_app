@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="10"
-    tools:context=".MainActivity2">
+    android:background="@color/brown"
+    >
 
 
     <FrameLayout
@@ -18,37 +19,45 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_weight="2"
+        android:padding="10dp"
         android:orientation="horizontal"
-        android:weightSum="4">
+        android:weightSum="3">
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_home"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/home"/>
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:background="@color/brown"
+            android:padding="20dp"
+            android:src="@drawable/home"
+            />
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_rank"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/ranking"/>
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:padding="20dp"
+            android:background="@color/brown"
+            android:src="@drawable/ranking"/>
 
-        <Button
-            android:id="@+id/btn_scanQR"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/scanner"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_mypage"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
             android:layout_weight="1"
-            android:background="@drawable/user"/>
+            android:padding="20dp"
+            android:background="@color/brown"
+            android:src="@drawable/user"/>
 
 
     </LinearLayout>

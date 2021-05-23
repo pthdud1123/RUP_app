@@ -43,8 +43,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_gravity="center"
-                android:background="@drawable/qrcode"/>
+                android:layout_gravity="center" />
 
         </LinearLayout>
 
@@ -62,7 +61,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="30dp"
                 android:text="ID"
-                android:textSize="50dp"/>
+                android:textSize="20dp"/>
 
             <TextView
                 android:id="@+id/mypage_rank"
@@ -76,7 +75,7 @@
                 android:textSize="50dp" />
 
             <TextView
-                android:id="@+id/mypage_point"
+                android:id="@+id/mypage_pointText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -87,12 +86,13 @@
                 android:textSize="30dp"/>
 
             <TextView
+                android:id="@+id/mypage_point"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/mypage_rank"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="40dp"
-                android:layout_toRightOf="@id/mypage_point"
+                android:layout_toRightOf="@id/mypage_pointText"
                 android:gravity="center"
                 android:text="100"
                 android:textSize="30dp" />

@@ -6,13 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/sky"
+    android:weightSum="4">
 
-    <ImageView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:weightSum="4"
+        android:orientation="horizontal">
+    <ImageButton
+        android:id="@+id/Imgbtn_alram"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_weight="1"
+        android:layout_gravity="start"
+        android:background="@color/sky"
+        android:padding="10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/scanner" />
+        <TextView
+            android:id="@+id/tv_cuppoint"
+            android:layout_weight="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cuppoint 0p"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+        <Button
+            android:id="@+id/btn_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="test"/>
+    </LinearLayout>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/like_btn"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_gravity="center"
-        android:background="@drawable/flower" />
+        android:layout_weight="3"
+        app:lottie_fileName="grow_plant2.json"
+        app:lottie_loop="false"
+        app:lottie_autoPlay="false" />
 
 
 </LinearLayout>

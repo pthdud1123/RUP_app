@@ -6,7 +6,7 @@ public class User {
     public String userId;
     public String userPw;
 
-    public User(){
+    public User(int user, String 소영, String s){
 
     }
     public User(String userId,String userPw){

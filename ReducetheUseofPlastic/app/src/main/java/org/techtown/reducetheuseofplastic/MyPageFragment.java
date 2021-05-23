@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,8 @@ public class MyPageFragment extends Fragment {
     private ImageView iv_qr;
     private String userEmail;
     MainActivity mainActivity;
+    private TextView textViewId,textViewPoint;
+    private TextView textViewLv;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -44,11 +47,14 @@ public class MyPageFragment extends Fragment {
 
 
         iv_qr=(ImageView)rootView.findViewById(R.id.imageview_qrcode);
-        //개인 QR이 바로 응답할 수 있게 해야 함
-        userEmail="pthdud1123";
+        textViewId=(TextView)rootView.findViewById(R.id.mypage_id);
+        textViewLv=(TextView)rootView.findViewById(R.id.mypage_rank);
+        textViewPoint=(TextView)rootView.findViewById(R.id.mypage_point);
         if(getArguments()!=null){
             userEmail=getArguments().getString("userEmail");
             System.out.println(userEmail);
+            textViewId.setText(userEmail);
+            textViewLv.setText("Lv.5");//일단 정적으로 고정
 
         }
 
@@ -57,7 +63,7 @@ public class MyPageFragment extends Fragment {
 
         MultiFormatWriter multiFormatWriter=new MultiFormatWriter();
         try{
-            BitMatrix bitMatrix=multiFormatWriter.encode(userEmail, BarcodeFormat.QR_CODE,100,100);
+            BitMatrix bitMatrix=multiFormatWriter.encode(userEmail, BarcodeFormat.QR_CODE,200,200);
             BarcodeEncoder barcodeEncoder=new BarcodeEncoder();
             Bitmap bitmap=barcodeEncoder.createBitmap(bitMatrix);
             iv_qr.setImageBitmap(bitmap);

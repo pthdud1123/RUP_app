@@ -3,14 +3,17 @@ package org.techtown.reducetheuseofplastic;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.view.Window;
+import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-    Button btn_home, btn_rank, btn_mypage; //프레그먼트 전환 버튼
+public class MainActivity extends AppCompatActivity {
+    ImageButton btn_home, btn_rank,btn_mypage;
     public String userEmail;
 
 
@@ -19,9 +22,13 @@ public class MainActivity extends AppCompatActivity {
     RankFragment fragment_rank;
     MyPageFragment fragment_mypage;
 
+    private DatabaseReference databaseReference;
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
@@ -30,9 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        btn_home=(Button)findViewById(R.id.btn_home);
-        btn_rank=(Button)findViewById(R.id.btn_rank);
-        btn_mypage=(Button)findViewById(R.id.btn_mypage);
+        btn_home=(ImageButton)findViewById(R.id.btn_home);
+        btn_rank=(ImageButton)findViewById(R.id.btn_rank);
+        btn_mypage=(ImageButton)findViewById(R.id.btn_mypage);
+
+        databaseReference= FirebaseDatabase.getInstance().getReference();
 
         btn_home.setOnClickListener(new View.OnClickListener(){
             @Override

@@ -29,10 +29,10 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-
+//외부 오픈소스를 가져온다.
 dependencies {
-
-
+    //def lottieVersion='3.7.0'이렇게 설정가능
+    implementation "com.airbnb.android:lottie:3.7.0"
     implementation platform('com.google.firebase:firebase-bom:26.4.0')
     implementation 'com.google.firebase:firebase-analytics:18.0.2'
     implementation 'com.google.firebase:firebase-core:18.0.2'
